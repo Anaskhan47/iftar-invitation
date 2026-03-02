@@ -11,12 +11,14 @@ import CustomCursor from "./components/CustomCursor";
 import SmoothScroll from "./components/SmoothScroll";
 import { SpiralDemo } from "./components/spiral-demo";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  const [entered, setEntered] = useState<boolean>(false);
+  const location = useLocation();
+  const [entered, setEntered] = useState<boolean>(location.pathname !== "/");
 
   const handleEnter = () => {
     const tl = gsap.timeline({
@@ -48,13 +50,11 @@ const AppContent = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/confirmed-iftar" element={<ConfirmedIftar />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/confirmed-iftar" element={<ConfirmedIftar />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </motion.div>
       )}
     </AnimatePresence>
@@ -64,11 +64,13 @@ const AppContent = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <CustomCursor />
-      <SmoothScroll />
-      <AppContent />
+      <BrowserRouter>
+        <Toaster />
+        <Sonner />
+        <CustomCursor />
+        <SmoothScroll />
+        <AppContent />
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

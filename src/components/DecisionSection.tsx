@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useCallback, useRef, forwardRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface DecisionSectionProps {
   onConfirm: () => void;
@@ -9,6 +10,7 @@ const DecisionSection = forwardRef<HTMLElement, DecisionSectionProps>(({ onConfi
   const [attempts, setAttempts] = useState(0);
   const [noPos, setNoPos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const moveNoButton = useCallback(() => {
     const container = containerRef.current;
@@ -62,7 +64,7 @@ const DecisionSection = forwardRef<HTMLElement, DecisionSectionProps>(({ onConfi
 
         <motion.button
           onClick={() => {
-            window.location.href = "/confirmed-iftar";
+            navigate("/confirmed-iftar");
           }}
           className="relative z-10 rounded-sm px-12 py-4 font-sans text-sm font-medium tracking-[0.25em] uppercase transition-colors"
           style={{
