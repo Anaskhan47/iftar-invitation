@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 50% 7%;
+    --foreground: 38 15% 88%;
+
+    --card: 220 40% 10%;
+    --card-foreground: 38 15% 88%;
+
+    --popover: 220 40% 10%;
+    --popover-foreground: 38 15% 88%;
+
+    --primary: 40 80% 55%;
+    --primary-foreground: 220 50% 7%;
+
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 38 15% 75%;
+
+    --muted: 220 20% 14%;
+    --muted-foreground: 220 15% 50%;
+
+    --accent: 35 90% 45%;
+    --accent-foreground: 220 50% 7%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 40 80% 55%;
+
+    --radius: 0.5rem;
+
+    --gold: 40 80% 55%;
+    --gold-glow: 35 90% 45%;
+    --gold-warm: 30 70% 50%;
+    --midnight: 220 50% 7%;
+    --midnight-light: 220 40% 12%;
+
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Outfit', system-ui, sans-serif;
+
+    --sidebar-background: 220 50% 7%;
+    --sidebar-foreground: 38 15% 88%;
+    --sidebar-primary: 40 80% 55%;
+    --sidebar-primary-foreground: 220 50% 7%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 38 15% 75%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 40 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-midnight {
+    background-color: hsl(var(--midnight));
+  }
+
+  .bg-midnight-light {
+    background-color: hsl(var(--midnight-light));
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 40px hsl(var(--gold) / 0.15), 0 0 80px hsl(var(--gold) / 0.08);
+  }
+
+  .gold-glow-strong {
+    box-shadow: 0 0 60px hsl(var(--gold) / 0.25), 0 0 120px hsl(var(--gold) / 0.12);
+  }
+
+  .gold-text-glow {
+    text-shadow: 0 0 30px hsl(var(--gold) / 0.3), 0 0 60px hsl(var(--gold) / 0.15);
+  }
+
+  .ambient-warm {
+    background: radial-gradient(ellipse at center, hsl(var(--gold) / 0.04) 0%, transparent 70%);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+}

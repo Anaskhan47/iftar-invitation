@@ -1,0 +1,17 @@
+{
+    "name": "NeoMinds Iftar 2026",
+    "short_name": "NeoMinds",
+    "description": "A personal invitation to the NeoMinds Iftar gathering.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0c10",
+    "theme_color": "#0a0c10",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

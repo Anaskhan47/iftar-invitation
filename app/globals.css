@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 220 50% 7%;
+        --foreground: 38 15% 88%;
+        --gold: 40 80% 55%;
+    }
+}
+
+body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overflow-x: hidden;
+}
+
+.gold-glow {
+    box-shadow: 0 0 20px rgba(197, 161, 95, 0.1), 0 0 40px rgba(197, 161, 95, 0.05);
+    transition: box-shadow 0.7s ease-in-out;
+}
+
+.gold-glow:hover {
+    box-shadow: 0 0 30px rgba(197, 161, 95, 0.2), 0 0 60px rgba(197, 161, 95, 0.1);
+}
