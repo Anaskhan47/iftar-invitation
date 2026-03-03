@@ -18,11 +18,17 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const [entered, setEntered] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleEnter = () => {
     const tl = gsap.timeline({
       onComplete: () => {
         setEntered(true);
+        // If they were on a subpage (like confirmed), send them back to the invitation homepage after animation
+        if (location.pathname !== "/") {
+          navigate("/");
+        }
       }
     });
 
