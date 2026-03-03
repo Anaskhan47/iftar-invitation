@@ -21,14 +21,18 @@ const AppContent = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  useEffect(() => {
+    // If we load on any sub-route (like /confirmed-iftar), immediately reset the URL to the root
+    // This ensures that after a refresh, the user starts the whole experience from the beginning.
+    if (location.pathname !== "/" && !entered) {
+      navigate("/", { replace: true });
+    }
+  }, [location.pathname, navigate, entered]);
+
   const handleEnter = () => {
     const tl = gsap.timeline({
       onComplete: () => {
         setEntered(true);
-        // If they were on a subpage (like confirmed), send them back to the invitation homepage after animation
-        if (location.pathname !== "/") {
-          navigate("/");
-        }
       }
     });
 
