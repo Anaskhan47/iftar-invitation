@@ -88,7 +88,7 @@ export default function ConfirmedIftar() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 1.4 }}
                 >
-                    Hope to see you.
+                    I'll see you at NeoMinds.
                 </motion.p>
 
                 <motion.div

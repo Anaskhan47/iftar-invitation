@@ -14,12 +14,14 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <SnapInfo />
       {!confirmed && <StarField />}
 
       <AnimatePresence mode="wait">
         {confirmed ? (
-          <ConfirmationSection key="confirmed" />
+          <>
+            <ConfirmationSection key="confirmed" />
+            <SnapInfo />
+          </>
         ) : (
           <main key="invitation" className="relative z-10">
             <HeroSection />

@@ -78,7 +78,7 @@ export default function ConfirmedPage() {
                 </h1>
 
                 <p className="font-serif text-xl md:text-3xl text-white/75 tracking-wide leading-relaxed animate-in fade-in fill-mode-both duration-1000 delay-500">
-                    Hope to see you.
+                    I'll see you at NeoMinds.
                 </p>
 
                 <div className="space-y-3 pt-6 animate-in fade-in fill-mode-both duration-1000 delay-700">
