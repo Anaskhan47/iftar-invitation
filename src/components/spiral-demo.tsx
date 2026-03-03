@@ -33,6 +33,14 @@ export const SpiralDemo = ({ onEnter }: SpiralDemoProps) => {
                     >
                         FOR YOU
                     </motion.h2>
+                    <motion.p
+                        className="font-serif text-gold text-[10px] tracking-[0.6em] uppercase opacity-40 italic"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.4 }}
+                        transition={{ delay: 2.2, duration: 2 }}
+                    >
+                        POOKIE
+                    </motion.p>
                 </div>
 
                 <button
