@@ -13,6 +13,7 @@ import { SpiralDemo } from "./components/spiral-demo";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import gsap from "gsap";
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +71,7 @@ const App = () => (
         <CustomCursor />
         <SmoothScroll />
         <AppContent />
+        <Analytics />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
