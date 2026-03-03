@@ -17,8 +17,7 @@ import gsap from "gsap";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  const location = useLocation();
-  const [entered, setEntered] = useState<boolean>(location.pathname !== "/");
+  const [entered, setEntered] = useState<boolean>(false);
 
   const handleEnter = () => {
     const tl = gsap.timeline({
