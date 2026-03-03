@@ -91,6 +91,14 @@ export default function ConfirmedPage() {
                     Don't be late.
                 </p>
             </div>
+
+            {/* Bottom Left Golden Message */}
+            <div className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-50 flex items-center gap-3 animate-in fade-in slide-in-from-left-5 duration-1000 delay-1000">
+                <div className="hidden sm:block h-px w-8 bg-[#c5a15f]/30" />
+                <p className="font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-[#c5a15f] shadow-[#c5a15f]/20 shadow-sm whitespace-nowrap">
+                    Hope to see you there
+                </p>
+            </div>
         </main>
     );
 }

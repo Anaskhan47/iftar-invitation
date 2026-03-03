@@ -11,7 +11,7 @@ const SnapInfo = () => {
             <div className="flex items-center gap-3">
                 <div className="hidden sm:block h-px w-8 bg-gold/30" />
                 <p className="font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-gold gold-text-glow whitespace-nowrap">
-                    hope to see u there
+                    Hope to see you there
                 </p>
             </div>
         </motion.div>

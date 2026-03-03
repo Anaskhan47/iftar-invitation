@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import SnapInfo from "../components/SnapInfo";
 
 /**
  * ConfirmedIftar Page
@@ -111,6 +112,8 @@ export default function ConfirmedIftar() {
                     Don't be late.
                 </motion.p>
             </div>
+
+            <SnapInfo />
         </main>
     );
 }
